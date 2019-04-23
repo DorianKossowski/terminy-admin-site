@@ -68,9 +68,9 @@ use PHPMailer\PHPMailer\Exception;
 function send_login_data($login, $password, $email, $name) {
     header('Content-type: text/html; charset=utf-8');
 
-    require 'phpmailer/src/Exception.php';
-    require 'phpmailer/src/PHPMailer.php';
-    require 'phpmailer/src/SMTP.php';
+    require 'Exception.php';
+    require 'PHPMailer.php';
+    require 'SMTP.php';
 
     date_default_timezone_set('Europe/Warsaw');
 
@@ -85,7 +85,7 @@ function send_login_data($login, $password, $email, $name) {
         $mail->Port = 587;
 
         $mail->CharSet = "UTF-8";
-        $mail->setLanguage('pl', '/phpmailer/language');
+        // $mail->setLanguage('pl', '/phpmailer/language');
 
         $mail->setFrom('terminy.io@gmail.com', 'Terminy - administrator');
         $mail->addAddress($email, $name);
